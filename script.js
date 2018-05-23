@@ -2,6 +2,8 @@ $(function(){
     //Get input data from file
     //Using $.ajax instead of $.get so that caching can be disabled
     $.ajax({url: "input.txt", success: function(data){
+        //remove \r in case input file uses \r\n instead of \n
+        data = data.replace('\r','');
         //split input file into lines
         var lines = data.split('\n');
         //remove and store instruction list
