@@ -4,6 +4,7 @@ $(function(){
     $.ajax({url: "input.txt", success: function(data){
         //split input file into lines
         var lines = data.split('\r\n');
+        console.log(lines);
         //remove and store instruction list
         var instructions = lines.pop();
         //remove and store room dimensions, and convert to numerical values
